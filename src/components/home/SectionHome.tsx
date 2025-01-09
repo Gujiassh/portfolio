@@ -20,8 +20,9 @@ const SectionHome = () => {
           ]}
           speed={70}
           className="text-[40px] font-bold"
-          waitTime={1500}
+          waitTime={1000}
           deleteSpeed={40}
+          loop={true}
           cursorChar={"_"}
         />
         <NeonButton className="mt-[40px]">

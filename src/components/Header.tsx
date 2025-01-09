@@ -31,8 +31,8 @@ const Header = () => {
       isPage: false,
     },
     {
-      title: 'contact',
-      url: 'contact',
+      title: 'resume',
+      url: 'resume',
       isPage: false,
     },
   ]
@@ -48,8 +48,16 @@ const Header = () => {
   }, [])
   const scrollToElement = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const header = document.querySelector('header');
+
+    if (element && header) {
+      const headerHeight = header.offsetHeight;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: 'smooth'
+      });
     }
   };
   return (

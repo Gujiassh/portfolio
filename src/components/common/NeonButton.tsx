@@ -1,4 +1,6 @@
+'use client'
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 import { ButtonHTMLAttributes, forwardRef } from 'react'
 
 interface NeonButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,14 +10,18 @@ interface NeonButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
   ({ className, variant = 'blue', children, ...props }, ref) => {
     return (
-      <button
+      <motion.button
         ref={ref}
+        whileHover={{
+          scale: 1.05,
+        }}
         className={cn(
           'group relative px-8 py-3',
           'font-semibold tracking-wider uppercase',
           'overflow-hidden',
+          ' border-2',
           // 主按钮样式 - 文字始终保持白色
-          'text-white border-2 border-white',
+          'text-white border-white',
           'transition-colors duration-300',
           // 扫光效果容器
           'before:absolute before:inset-0',
@@ -31,6 +37,7 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
             // 青色变体
             'hover:bg-[#00ffff]': variant === 'cyan',
             'before:from-[#00ffff] before:to-[#00ffff]': variant === 'cyan',
+            'text-[#109af7] border-[#109af7]': variant === 'cyan',
           },
           // 边框动画
           'after:absolute after:inset-0',
@@ -49,7 +56,7 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
         {...props}
       >
         <span className="relative z-10">{children}</span>
-      </button>
+      </motion.button>
     )
   }
 )
