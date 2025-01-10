@@ -1,0 +1,20 @@
+{
+  "common": {
+    "白傲": "白傲"
+  },
+  "pages": {
+    "home": {
+      "title": "首页",
+      "description": "欢迎访问首页"
+    },
+    "about": {
+      "title": "关于",
+      "description": "关于我们"
+    }
+  },
+  "metadata": {
+    "title": "我的应用",
+    "template": "%s | 我的应用",
+    "description": "这是我的应用描述"
+  }
+}

@@ -1,6 +1,8 @@
+
 import Typewriter from '@/fancy/Typewriter'
 import { cn } from '@/lib/utils'
 import NeonButton from '../common/NeonButton'
+import WaveText from '../common/WaveText'
 const SectionHome = () => {
   return (
     <section className={
@@ -13,7 +15,9 @@ const SectionHome = () => {
     }
       id="home">
       <div className='text-[#fff] text-center'>
-        <div className={`text-[30px]`}>WELCOME TO IMILE</div>
+        <div className={`text-[30px]`}>
+          <WaveText text="WELCOME TO IMILE" className=' font-bold' />
+        </div>
         <Typewriter
           text={[
             'LORG CSKKSPC PDLCMSCC'

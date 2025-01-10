@@ -1,7 +1,8 @@
+'use client'
 import { cn } from '@/lib/utils'
 import NeonButton from '../common/NeonButton'
-import VariableFontHoverByRandomLetter from '@/fancy/VariableFontHoverByRandomLetter'
-import LetterSwapForward from '@/fancy/LetterSwapForward'
+
+import { motion } from 'motion/react'
 
 const SectionAbout = () => {
   return (
@@ -22,13 +23,22 @@ const SectionAbout = () => {
           'flex gap-[30px]',
           'p-[20px]'
         )}>
-          <div className={cn(
-            'rounded-full',
-            `bg-[url('/202410151270095361364594688.jpg')]`,
-            'bg-cover bg-center bg-no-repeat',
-            'w-[300px] h-[300px]',
-            'border-[5px] border-[#f4f4f4]'
-          )}></div>
+          <motion.div
+            whileHover={{
+              scale: 1.1, cursor: "pointer"
+            }}
+            whileTap={{ scale: 0.9 }}
+            transition={{
+              duration: 0.2, ease: 'easeInOut'
+            }}
+            className={cn(
+              'rounded-full',
+              `bg-[url('/202410151270095361364594688.jpg')]`,
+              'bg-cover bg-center bg-no-repeat',
+              'w-[300px] h-[300px]',
+              'border-[5px] border-[#f4f4f4]'
+            )}></motion.div>
+
           <div className='flex-1'>
             <div className={'font-bold text-[#109af7] text-[20px]'}>RYAN</div>
             <div className="text-[18px] ">Front end Developer</div>

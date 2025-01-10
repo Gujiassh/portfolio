@@ -2,8 +2,19 @@
 
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 const Header = () => {
+  const router = useRouter()
+  const pathname = usePathname()
+  const t = useTranslations('common')
+
+  const switchLanguage = (locale: string) => {
+    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${locale}`)
+    router.push(newPath)
+  }
   const nvaList = [
     {
       title: '关于',
@@ -69,7 +80,7 @@ const Header = () => {
         "py-[30px] px-[40px] text-[#fff]"
     )}>
       <div className="border-[#109af7] border-[5px] text-[18px] py-[5px] px-[15px] cursor-pointer">
-        RYAN
+        {t('白傲')}
       </div>
       <ul className="flex gap-[10px]">
         {nvaList.map((item) => (
@@ -86,6 +97,10 @@ const Header = () => {
           </li>
         ))}
       </ul>
+      <div className="flex gap-2">
+        <button onClick={() => switchLanguage('zh')}>中文</button>
+        <button onClick={() => switchLanguage('en')}>EN</button>
+      </div>
     </header>
   )
 }

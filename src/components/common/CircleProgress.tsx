@@ -94,8 +94,6 @@ const CircleProgress: React.FC<CircleProgressProps> = ({
             target={progress}
             autoStart={true}
             transition={{ duration: 2, type: "tween", ease: "easeInOut" }}
-            onComplete={() => console.log("complete")}
-            onStart={() => console.log("start")}
           />
         )}
         %

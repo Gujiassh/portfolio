@@ -1,20 +1,10 @@
 import type { NextConfig } from "next";
+const withNextIntl = require('next-intl/plugin')('./src/i18n.ts');
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig = withNextIntl({
   /* config options here */
-  i18n: {
-    locales: ['zh-CN', 'en-US'],
-    defaultLocale: 'zh-CN',
-    localeDetection: false,
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/home',
-      },
-    ];
-  },
-};
+
+
+});
 
 export default nextConfig;

@@ -1,9 +1,12 @@
-import SectionHome from '@/components/home/SectionHome';
 import SectionAbout from '@/components/home/SectionAbout';
-import SectionSkills from '@/components/home/SectionSkills';
-import SectionPortfolio from '@/components/home/SectionPortfolio';
+import SectionContact from '@/components/home/SectionContact';
 import SectionHire from '@/components/home/SectionHire';
+import SectionHome from '@/components/home/SectionHome';
 import SectionResume from '@/components/home/SectionResume';
+import SectionTech from '@/components/home/SectionTech';
+import SectionPortfolio from '@/components/home/SectionPortfolio';
+import SectionSkills from '@/components/home/SectionSkills';
+
 export default function Home() {
   return (
     <div className="a">
@@ -13,6 +16,8 @@ export default function Home() {
       <SectionPortfolio />
       <SectionHire />
       <SectionResume />
+      <SectionTech />
+      <SectionContact />
     </div>
   );
 }

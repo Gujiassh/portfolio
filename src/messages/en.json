@@ -1,0 +1,25 @@
+{
+  "common": {
+    "白傲": "RYAN"
+  },
+  "关于": "About",
+  "技能": "Skills",
+  "服务": "Services",
+  "项目": "Projects",
+  "联系": "Contact",
+  "pages": {
+    "home": {
+      "title": "Home",
+      "description": "Welcome to homepage"
+    },
+    "about": {
+      "title": "About",
+      "description": "About us"
+    }
+  },
+  "metadata": {
+    "title": "My App",
+    "template": "%s | My App",
+    "description": "This is my app description"
+  }
+}

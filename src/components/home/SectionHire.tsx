@@ -19,6 +19,8 @@ const SectionHire = () => {
           HELLO HELLO HELLO HELLO
         </div>
         <motion.div
+          drag
+          whileDrag={{ scale: 1.2, }}
           whileHover={{
             scale: 1.05,
           }}

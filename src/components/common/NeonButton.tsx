@@ -11,10 +11,14 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
   ({ className, variant = 'blue', children, ...props }, ref) => {
     return (
       <motion.button
+        drag
+        whileDrag={{ scale: 1.2, }}
         ref={ref}
         whileHover={{
           scale: 1.05,
         }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
         className={cn(
           'group relative px-8 py-3',
           'font-semibold tracking-wider uppercase',
