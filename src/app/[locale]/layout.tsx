@@ -20,11 +20,14 @@ export async function generateMetadata(): Promise<Metadata> {
 // 主布局组件
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params,
 }: {
-  children: React.ReactNode
-  params: { locale: string }
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
+  // 解构 params 需要在函数体内进行
+  const { locale } = params;
+
   let messages
   try {
     messages = (await import(`@/messages/${locale}.json`)).default
