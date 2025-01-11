@@ -33,7 +33,7 @@ const SectionAbout = () => {
             }}
             className={cn(
               'rounded-full',
-              `bg-[url('/202410151270095361364594688.jpg')]`,
+              `bg-[url('/c39c60f1b6691504d32c9e66795af65.jpg')]`,
               'bg-cover bg-center bg-no-repeat',
               'w-[300px] h-[300px]',
               'border-[5px] border-[#f4f4f4]'
