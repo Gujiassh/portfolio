@@ -6,6 +6,7 @@ import SectionResume from '@/components/home/SectionResume';
 import SectionTech from '@/components/home/SectionTech';
 import SectionPortfolio from '@/components/home/SectionPortfolio';
 import SectionSkills from '@/components/home/SectionSkills';
+import SectionLink from '@/components/home/SectionLink';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <SectionResume />
       <SectionTech />
       <SectionContact />
+      <SectionLink />
     </div>
   );
 }
