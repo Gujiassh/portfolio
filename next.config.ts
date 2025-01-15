@@ -11,6 +11,13 @@ const nextConfig: NextConfig = withNextIntl({
     // 关闭构建时的类型检查
     ignoreBuildErrors: true,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack']
+    });
+    return config;
+  }
 });
 
 export default nextConfig;

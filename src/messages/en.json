@@ -1,11 +1,6 @@
 {
-  "common": {
-    "白傲": "RYAN"
-  },
-  "关于": "About",
-  "技能": "Skills",
+  "白傲": "RYAN",
   "服务": "Services",
-  "项目": "Projects",
   "联系": "Contact",
   "pages": {
     "home": {
@@ -21,5 +16,20 @@
     "title": "My App",
     "template": "%s | My App",
     "description": "This is my app description"
-  }
+  },
+  "关于": "About",
+  "技能": "Skills",
+  "项目": "Projects",
+  "简历": "Resume",
+  "关于我": "ABOUT ME",
+  "你好，我是白傲": "Hello, I'm Ryan",
+  "我是一名前端工程师": "I'm a front-end engineer",
+  "我有三年工作经验": "I have three years of experience",
+  "欢迎来到我的网站": "Welcome to my website",
+  "前端开发让我着迷因为它是连接用户与技术的桥梁": "Front-end development fascinates me because it is the bridge between users and technology.",
+  "自我介绍1": "As a front-end engineer with 3 years of experience, I specialize in building enterprise application systems. I excel at using modern front-end technology stacks to transform complex business requirements into elegant technical solutions.",
+  "自我介绍2": "My main technology stack is react, nodejs, typescript, and its ecosystem.",
+  "自我介绍3": "In addition to programming, my hobbies include playing games and researching some fortune-telling knowledge. I also post some game videos on bilibili, welcome to follow~",
+  "下载简历": "Download Resume",
+  "前端工程师": "Front-end Engineer"
 }

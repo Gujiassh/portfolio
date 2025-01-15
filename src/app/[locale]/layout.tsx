@@ -25,7 +25,7 @@ export default async function Layout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const { locale } = params;
+  const locale = await params.locale;
 
   let messages
   try {

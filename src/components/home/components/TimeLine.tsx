@@ -2,6 +2,19 @@
 import { cn } from '@/lib/utils'
 import { motion } from "motion/react"
 
+/**
+ * 
+ * @returns 
+ * 
+ * 
+ * 
+ * 
+ 
+
+
+## LEON
+### Frontend Developer
+ */
 export default function TimeLine() {
   const list = [
     {

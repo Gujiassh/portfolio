@@ -3,48 +3,23 @@ import { cn } from '@/lib/utils'
 import { Dialog } from '@mui/material'
 import { useState } from 'react'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { CardTitle } from './components/CardTitle';
+import { PORTFOLIO_DATA } from '@/constants';
+import Image from 'next/image'
+import NeonButton from '../common/NeonButton';
 const SectionPortfolio = () => {
 
   const [open, setOpen] = useState(false)
   const [dialogData, setDialogData] = useState({
     name: '',
     description: '',
-    imgUrl: ''
+    imgUrl: '',
+    projectUrl: ''
   })
   const handleClose = () => {
     setOpen(false)
   }
-  const portfolioList = [{
-    name: 'SASS',
-    description: 'Lorem ipsum dolor sit amet',
-    imgUrl: '/jess-bailey-7-b8L0ItAYc-unsplash.jpg'
-  },
-  {
-    name: 'ERP',
-    description: 'Lorem ipsum dolor sit amet dasds',
-    imgUrl: '/jess-bailey-7-b8L0ItAYc-unsplash.jpg'
-  },
-  {
-    name: 'GGC',
-    description: 'Lorem ipsum dolor sit amet cxawdf swww',
-    imgUrl: '/jess-bailey-7-b8L0ItAYc-unsplash.jpg'
-  },
-  {
-    name: 'GV',
-    description: 'Lorem ipsum dolor sit amet cxawdf swww',
-    imgUrl: '/jess-bailey-7-b8L0ItAYc-unsplash.jpg'
-  },
-  {
-    name: 'GVc',
-    description: 'Lorem ipsum dolor sit amet cxawdf swww',
-    imgUrl: '/jess-bailey-7-b8L0ItAYc-unsplash.jpg'
-  },
-  {
-    name: 'GVccsa',
-    description: 'Lorem ipsum dolor sit amet cxawdf swww',
-    imgUrl: '/jess-bailey-7-b8L0ItAYc-unsplash.jpg'
-  }
-  ]
+
 
 
   return (
@@ -53,9 +28,7 @@ const SectionPortfolio = () => {
         'flex flex-col items-center justify-center'
       )}>
         <div className={cn('flex flex-col items-center justify-center')}>
-          <div className={cn('text-[20px] font-bold border-t-4 border-b-4 border-t-[#000000] border-b-[#109af7]',
-            'px-[20px] py-[5px]'
-          )}>Portfolio</div>
+          <CardTitle title='Portfolio' />
           <div className='text-[#797979] mt-[15px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
         </div>
         <div className={cn(
@@ -64,9 +37,8 @@ const SectionPortfolio = () => {
           'p-[20px]',
           'grid grid-cols-3 gap-[10px]',
         )}>
-
           {
-            portfolioList.map(a => {
+            PORTFOLIO_DATA.map(a => {
               return <div key={a.name} className="bg-[#ffffff]">
                 <div
                   style={{
@@ -104,12 +76,8 @@ const SectionPortfolio = () => {
               </div>
             })
           }
-
-
-
         </div>
       </div>
-
       <Dialog
         fullScreen
         open={open}
@@ -125,8 +93,14 @@ const SectionPortfolio = () => {
                   color: '#3a80b6'
                 }
               }}></CloseOutlinedIcon></div>
-          <div className='p-[40px] flex items-center justify-center'>
-            {dialogData.description}
+          <div className='p-[40px] flex flex-col items-center justify-center'>
+            <div className='mb-[20px]'>{dialogData.description}</div>
+            <Image src={dialogData.imgUrl} alt={dialogData.name} width={500} height={500}></Image>
+
+            <div className='mb-[20px]'>{dialogData.description}</div>
+            <NeonButton variant='cyan' onClick={() => {
+            }}><a href={dialogData?.projectUrl} target='_blank'>View Project</a></NeonButton>
+
           </div>
         </div>
       </Dialog>
