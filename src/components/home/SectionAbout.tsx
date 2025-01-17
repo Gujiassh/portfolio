@@ -16,7 +16,7 @@ const SectionAbout = () => {
         'flex flex-col items-center justify-center'
       )}>
         <div className={cn('flex flex-col items-center justify-center')}>
-          <CardTitle title='About' />
+          <CardTitle title={t('关于我')} />
           <div className='text-[#797979] mt-[15px]'>{t('前端开发让我着迷因为它是连接用户与技术的桥梁')}</div>
         </div>
         <div className={cn(

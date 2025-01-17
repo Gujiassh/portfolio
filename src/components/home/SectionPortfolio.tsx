@@ -7,7 +7,9 @@ import { CardTitle } from './components/CardTitle';
 import { PORTFOLIO_DATA } from '@/constants';
 import Image from 'next/image'
 import NeonButton from '../common/NeonButton';
+import { useTranslations } from 'next-intl';
 const SectionPortfolio = () => {
+  const t = useTranslations();
 
   const [open, setOpen] = useState(false)
   const [dialogData, setDialogData] = useState({
@@ -67,7 +69,7 @@ const SectionPortfolio = () => {
                       setDialogData(a)
                       setOpen(true)
                     }}
-                  >READ MORE</div>
+                  >{t('查看更多').toUpperCase()}</div>
                 </div>
                 <div className='w-full flex flex-col items-center justify-center py-[10px]'>
                   <div className='text-[18px] font-bold'>{a.name}</div>
