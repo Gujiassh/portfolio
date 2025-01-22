@@ -15,30 +15,16 @@ import { motion } from "motion/react"
 ## LEON
 ### Frontend Developer
  */
-export default function TimeLine() {
-  const list = [
-    {
-      id: 1,
-      mainTitle: '2024',
-      title: 'xxdak csif',
-      subTitle: 'Lorem ipsum dolor sit amet',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    },
-    {
-      id: 2,
-      mainTitle: '2025',
-      title: 'xxdak csif',
-      subTitle: 'Lorem ipsum dolor sit amet',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    },
-    {
-      id: 3,
-      mainTitle: '2026',
-      title: 'xxdak csif',
-      subTitle: 'Lorem ipsum dolor sit amet',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    }
-  ]
+export default function TimeLine({ list = [] }: {
+  list: {
+    id: number,
+    mainTitle: string,
+    title?: string,
+    subTitle?: string,
+    description?: string,
+  }[]
+}) {
+
   return <div className={cn(
     'w-full',
     'flex flex-col gap-[100px]',
@@ -51,7 +37,7 @@ export default function TimeLine() {
         return <motion.div key={item.id}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          className='shadow-2xl flex items-center justify-center rounded-full z-10 relative'
+          className='shadow-2xl flex items-center justify-center rounded-full z-10 relative p-[10px]'
           style={{
             width: '150px',
             height: '150px',
@@ -69,9 +55,9 @@ export default function TimeLine() {
             "absolute top-[10%] w-[200%] *:w-[100%]",
             index % 2 === 0 ? 'left-[120%]' : 'right-[120%]'
           )}>
-            <div className="text-[20px] font-bold text-[#000]">{item.title}</div>
-            <div className="text-[16px] text-[#109af7]">{item?.subTitle}</div>
-            <div className="text-[14px] text-[#787878]">{item.description}</div>
+            {item.title && <div className="text-[20px] font-bold text-[#000]">{item.title}</div>}
+            {item?.subTitle && <div className="text-[16px] text-[#109af7]">{item?.subTitle}</div>}
+            {item.description && <div className="text-[14px] text-[#787878] text-center">{item.description}</div>}
           </div>
         </motion.div>
       })

@@ -42,7 +42,7 @@ const Header = () => {
         {t('白傲')}
       </div>
       <div className="flex gap-[10px]">
-        {/* <ul className="flex gap-[10px]">
+        <ul className="flex gap-[10px]">
           {NAV_ITEMS.map((item) => (
             <li
               key={item.url}
@@ -56,7 +56,7 @@ const Header = () => {
               {t(item.title)}
             </li>
           ))}
-        </ul> */}
+        </ul>
         <div className="flex gap-2">
           <motion.div className={cn(
             'cursor-pointer',

@@ -4,10 +4,10 @@ import { Dialog } from '@mui/material'
 import { useState } from 'react'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import { CardTitle } from './components/CardTitle';
-import { PORTFOLIO_DATA } from '@/constants';
 import Image from 'next/image'
 import NeonButton from '../common/NeonButton';
 import { useTranslations } from 'next-intl';
+import { Tooltip } from '@mui/material';
 const SectionPortfolio = () => {
   const t = useTranslations();
 
@@ -21,17 +21,33 @@ const SectionPortfolio = () => {
   const handleClose = () => {
     setOpen(false)
   }
+  const portfolioData = [{
+    name: t('采购系统'),
+    description: t('采购系统简介'),
+    imgUrl: '/purchase.jpg',
+  },
+  {
+    name: t('开发者平台后台'),
+    description: t('开发者平台后台简介'),
+    imgUrl: '/developer.jpg'
+  },
+  {
+    name: t('组件库开发'),
+    description: t('组件库开发简介'),
+    imgUrl: '/ui-component.jpg'
+  },
 
+  ]
 
 
   return (
-    <section id="portfolio" className="min-h-[95vh] p-[70px] bg-[#f4f4f4]">
+    <section id="portfolio" className=" p-[70px] bg-[#f4f4f4]">
       <div className={cn(
         'flex flex-col items-center justify-center'
       )}>
         <div className={cn('flex flex-col items-center justify-center')}>
           <CardTitle title='Portfolio' />
-          <div className='text-[#797979] mt-[15px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
         </div>
         <div className={cn(
           'w-full',
@@ -40,7 +56,7 @@ const SectionPortfolio = () => {
           'grid grid-cols-3 gap-[10px]',
         )}>
           {
-            PORTFOLIO_DATA.map(a => {
+            portfolioData.map(a => {
               return <div key={a.name} className="bg-[#ffffff]">
                 <div
                   style={{
@@ -71,9 +87,17 @@ const SectionPortfolio = () => {
                     }}
                   >{t('查看更多').toUpperCase()}</div>
                 </div>
-                <div className='w-full flex flex-col items-center justify-center py-[10px]'>
-                  <div className='text-[18px] font-bold'>{a.name}</div>
-                  <div className='text-[14px] px-[10px] text-[#777777]'>{a.description}</div>
+                <div className='w-full flex flex-col items-center justify-center p-[10px] text-ellipsis text-nowrap overflow-hidden '>
+                  <div className='p-[10px] w-full text-[18px] font-bold text-ellipsis text-nowrap overflow-hidden '>
+                    <Tooltip title={a?.name}>
+                      {a?.name}
+                    </Tooltip>
+                  </div>
+                  <div className='text-[14px] px-[10px] text-[#777777] text-ellipsis text-nowrap overflow-hidden w-full'>
+                    <Tooltip title={a?.description}>
+                      {a?.description}
+                    </Tooltip>
+                  </div>
                 </div>
               </div>
             })
@@ -96,12 +120,14 @@ const SectionPortfolio = () => {
                 }
               }}></CloseOutlinedIcon></div>
           <div className='p-[40px] flex flex-col items-center justify-center'>
-            <div className='mb-[20px]'>{dialogData.description}</div>
+            <div className='mb-[20px] text-[24px] font-bold text-center'>{dialogData.name}</div>
             <Image src={dialogData.imgUrl} alt={dialogData.name} width={500} height={500}></Image>
 
-            <div className='mb-[20px]'>{dialogData.description}</div>
-            <NeonButton variant='cyan' onClick={() => {
-            }}><a href={dialogData?.projectUrl} target='_blank'>View Project</a></NeonButton>
+            <div className='my-[20px]'>{dialogData.description}</div>
+            {
+              dialogData.projectUrl && <NeonButton variant='cyan' onClick={() => {
+              }}><a href={dialogData?.projectUrl} target='_blank'>{t('跳转到项目')}</a></NeonButton>
+            }
 
           </div>
         </div>

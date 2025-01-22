@@ -1,7 +1,9 @@
 'use client'
 import { motion } from 'motion/react'
+import { useTranslations } from 'next-intl';
 
 const SectionTech = () => {
+  const t = useTranslations();
   const techList = [
     {
       name: 'React',
@@ -16,9 +18,6 @@ const SectionTech = () => {
       name: 'Motion'
     },
     {
-      name: 'Matter'
-    },
-    {
       name: 'Tailwind Css'
     }
   ]
@@ -27,7 +26,7 @@ const SectionTech = () => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       className="absolute left-5 top-5 border-2 border-[#00a3ff] text-[#00a3ff] text-[16px] px-3 py-1 cursor-pointer">
-      生产现场撒
+      {t('本网站搭建使用了以下技术栈')}
     </motion.div>
     <motion.div className='flex gap-3 items-center absolute' animate={{
       translateX: [0, '50%'],
