@@ -25,7 +25,7 @@ export default async function Layout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const locale = await params.locale;
+  const locale = params.locale;
 
   let messages
   try {
@@ -34,7 +34,6 @@ export default async function Layout({
     notFound()
   }
 
-  // 移除 useLocale 的使用，直接使用 params 中的 locale
   return (
     <html lang={locale}>
       <body>

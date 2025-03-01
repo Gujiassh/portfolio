@@ -57,7 +57,7 @@ export default function TimeLine({ list = [] }: {
           )}>
             {item.title && <div className="text-[20px] font-bold text-[#000]">{item.title}</div>}
             {item?.subTitle && <div className="text-[16px] text-[#109af7]">{item?.subTitle}</div>}
-            {item.description && <div className="text-[14px] text-[#787878] text-center">{item.description}</div>}
+            {item.description && <div className="text-[14px] text-[#787878] ">{item.description}</div>}
           </div>
         </motion.div>
       })

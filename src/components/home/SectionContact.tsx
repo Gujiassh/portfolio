@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { getResume } from '@/const'
 
 
 
@@ -16,13 +17,15 @@ const SectionContact = () => {
     )
   } >
     <div className={cn(
-      'w-[50%] h-[80%]',
+      'w-[80%] h-[80%]',
       'flex  items-center justify-center gap-[2%]',
       'text-[#fff] text-[20px]',
+      '*:whitespace-nowrap',
       '*:p-[10px] *:bg-[#008fff] *:rounded-[5px] *:cursor-pointer *:shadow-lg *:shadow-[#777777] *:w-[49%] *:text-center'
     )}>
       <div className="">Base In: {t('杭州')}</div>
       <div>Email: baaoshh@gmail.com</div>
+      <div onClick={getResume} className='cursor-pointer'>{t('下载简历')}</div>
     </div>
 
 
