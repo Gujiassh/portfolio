@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { cn, scrollToElement } from '@/lib/utils'
+import { cn, } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
@@ -51,7 +51,7 @@ const Header = () => {
                 "text-[16px] cursor-pointer",
                 "hover:text-[#109af7]"
               )}
-              onClick={() => scrollToElement(item.url)}
+              // onClick={() => scrollToElement(item.url)}
             >
               {t(item.title)}
             </li>

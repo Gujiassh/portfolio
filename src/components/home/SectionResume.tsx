@@ -5,6 +5,7 @@ import TimeLine from "./components/TimeLine"
 import { useTranslations } from "next-intl"
 import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload"
 import { getResume } from "@/const"
+import LineWithBall from "../ui/line-with-ball"
 const SectionResume = () => {
   const t = useTranslations()
   const list = [
@@ -17,14 +18,14 @@ const SectionResume = () => {
     },
     {
       id: 4,
-      mainTitle: t("杭州某科技有限公司"),
+      mainTitle: t("杭州艾麦科技有限公司"),
       title: t("2022~至今"),
       subTitle: t("前端工程师"),
       description: t("工作经历简介"),
     },
   ]
   return (
-    <section id="resume" className="p-[70px]">
+    <section id="resume" className="p-[70px] relative">
       <div className={cn("flex flex-col items-center justify-center")}>
         <div
           className={cn("flex flex-col items-center justify-center mb-[20px]")}
@@ -35,9 +36,17 @@ const SectionResume = () => {
           </div>
         </div>
         <div className="cursor-pointer text-[#797979] my-[20px] hover:text-[#008fff]">
-          <div onClick={getResume} className="rounded-full bg-[#e2e2e2] p-[5px]"><SimCardDownloadIcon></SimCardDownloadIcon></div>
+          <div
+            onClick={getResume}
+            className="rounded-full bg-[#e2e2e2] p-[5px]"
+          >
+            <SimCardDownloadIcon></SimCardDownloadIcon>
+          </div>
         </div>
         <TimeLine list={list} />
+      </div>
+      <div className="w-[500px] h-[100px] absolute bottom-0 right-0">
+        <LineWithBall />
       </div>
     </section>
   )

@@ -8,7 +8,7 @@ import { scrollToElement } from '@/lib/utils';
 const SectionHire = () => {
   const t = useTranslations();
   return (
-    <section className='relative h-[20vh] w-full bg-[#017bfe]'>
+    <section className='relative bg-[#017bfe]'>
       <FloatingOrbs
         speed={10}         // 速度调小一点
         size={500}

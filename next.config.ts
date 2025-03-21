@@ -6,7 +6,14 @@ const nextConfig: NextConfig = withNextIntl({
     // 关闭构建时的 eslint 检查
     ignoreDuringBuilds: true,
   },
-
+  images: {
+    domains: ['images.unsplash.com'],
+  },
+  // i18n: {
+  //   locales: ['en', 'zh'],
+  //   defaultLocale: 'zh',
+  //   localeDetection: false,
+  // },
   typescript: {
     // 关闭构建时的类型检查
     ignoreBuildErrors: true,

@@ -11,7 +11,7 @@ const SectionContact = () => {
 
   return <section id='contact' className={
     cn(
-      'w-[100%] h-[50vh]',
+     
       'bg-[url("/insung-yoon-tPXZR1lijT0-unsplash.jpg")] bg-cover bg-center bg-no-repeat bg-fixed',
       'flex items-center justify-center'
     )
