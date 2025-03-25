@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
 import { useLocale, useTranslations } from "next-intl"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname, useRouter } from 'next/navigation'
 import InternationalIcon from "../../../public/international.svg"
 import { useTransition } from 'react'
 
@@ -14,12 +14,10 @@ export default function SwitchLanguage() {
   const locale = useLocale()
   const [isPending, startTransition] = useTransition()
 
-  const switchLanguage = (locale: string) => {
+  const switchLanguage = (newLocale: string) => {
     startTransition(() => {
-      const currentPath = pathname.replace(/^\/[a-z]{2}/, '')
-      const newPath = `/${locale}${currentPath}`
-      router.replace(newPath)
-      // window.location.reload()
+      const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLocale}`)
+      router.push(newPath)
     })
   }
 
@@ -44,9 +42,7 @@ export default function SwitchLanguage() {
         },
       }}
       onClick={() => {
-        const currentLocale = locale
-        console.log(currentLocale)
-        switchLanguage(currentLocale === "zh" ? "en" : "zh")
+        switchLanguage(locale === "zh" ? "en" : "zh")
       }}
     >
       <InternationalIcon width={25} height={25} fill={"#000"} />

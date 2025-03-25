@@ -62,14 +62,14 @@ const SectionHome = () => {
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white"
               >
-                通过代码实现想法
+                {t('通过代码实现想法')}
               </CardItem>
               <CardItem
                 as="p"
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                三年前端开发经验
+                {t('三年前端开发经验')}
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
@@ -86,14 +86,14 @@ const SectionHome = () => {
                   target="__blank"
                   className="cursor-pointer px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                 >
-                  <span onClick={getResume}> 我的简历 →</span>
+                  <span onClick={getResume}> {t('我的简历')} →</span>
                 </CardItem>
                 <CardItem
                   translateZ={20}
                   as="button"
                   className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                 >
-                  Base in 杭州
+                  {t('Base in 杭州')}
                 </CardItem>
               </div>
             </CardBody>
