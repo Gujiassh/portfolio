@@ -10,7 +10,6 @@ const ScrollingText = ({
   text: string
   direction?: "left" | "right"
 }) => {
-  console.log(direction)
   const list = text.split(",")
 
   const containerRef = useRef<HTMLDivElement>(null)

@@ -91,15 +91,20 @@ const SectionSkills = () => {
       </div>
      
       <div
-        className={cn("absolute top-[50%] left-[50%]")}
+        className={cn("absolute top-0 left-[50px]")}
         style={{
-          transform: "translate(-50%, 350%) rotateZ(45deg)",
-          transformOrigin: "center",
+          transform: "rotateZ(90deg)",
+          transformOrigin: "left",
         }}
       >
         <ScrollingText text="Think,Watch,Code,Explore,Feel"></ScrollingText>
       </div>
-      <ScrollingText text="Think,Watch,Code,Explore,Feel" />
+      <div
+        className={cn("absolute bottom-0 left-100px")}
+      
+      >
+        <ScrollingText text="Think,Watch,Code,Explore,Feel"></ScrollingText>
+      </div>
     </section>
   )
 }

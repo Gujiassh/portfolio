@@ -23,7 +23,7 @@ const SectionHire = () => {
         </div>
         <motion.div
           onClick={() => {
-            scrollToElement('contact')
+            scrollToElement('link')
           }
           }
           drag
