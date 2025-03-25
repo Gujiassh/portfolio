@@ -99,12 +99,12 @@ const SectionAbout = () => {
                 },
               }}
               viewport={{ once: true }}
-              animate={{ 
+              animate={{
                 rotateY: 360,
                 transition: {
                   duration: 1,
                   repeat: Infinity,
-                }
+                },
               }}
               className="absolute left-[-10%] bottom-[-50%]"
             >
@@ -162,12 +162,21 @@ const SectionAbout = () => {
           handlePanelOpen={handleIsOpen}
           renderButton={renderOpenButton}
         >
-          <div className="w-[1000px] h-[500px] flex justify-center items-center p-10">
+          
+          <div className="w-[1000px] h-[550px] flex justify-center items-center p-10">
             <div>
+              <p className="text-center text-gray-500 mb-4">
+                (外网访问不了b站的视频，暂时挂油管了~)
+              </p>
               <iframe
                 width={800}
                 height={500}
-                src="//player.bilibili.com/player.html?isOutside=true&aid=113810778097522&bvid=BV1eecPeFETa&cid=27819902516&p=1"
+                src="https://www.youtube.com/embed/xK9_LLqXpN8?si=Az6VoU6kiXDIo4yw"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
               ></iframe>
             </div>
           </div>
